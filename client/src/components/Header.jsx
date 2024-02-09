@@ -27,22 +27,10 @@ const Header = () => {
 
   </from>
 
-  <Button className='w-12 h-10 ' color='gray' pill>
+  <Button className='w-12 h-10 lg:hidden ' color='gray' pill>
     <AiOutlineSearch/>
   </Button>
-
-
-<div className='flex gap-2'>
-<Button className='w-12 h-10 hidden sm:inline ' color='gray' pill >
-  <FaMoon/>
-</Button>
-<Link to='/sign-in' >
- <Button gradientDuoTone='purpleToBlue'>Sign in</Button>
-
-</Link>
-<Navbar.Toggle/>
-</div>
-<Navbar.Collapse>
+  <Navbar.Collapse>
   <Navbar.Link active={path === "/"} as={'div'}>
     <Link to='/'>
       Home
@@ -68,6 +56,18 @@ const Header = () => {
 
 
 </Navbar.Collapse>
+
+<div className='flex gap-2'>
+<Button className='w-12 h-10 hidden sm:inline ' color='gray' pill >
+  <FaMoon/>
+</Button>
+<Link to='/sign-in' >
+ <Button gradientDuoTone='purpleToBlue' outline >Sign in</Button>
+
+</Link>
+<Navbar.Toggle/>
+</div>
+
 
   </Navbar>
   )
