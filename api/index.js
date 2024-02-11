@@ -38,3 +38,8 @@ app.use((err,req,res,next) =>{
 
   
 })
+
+app.use((req, res, next) => {
+  res.setHeader('Content-Security-Policy', "script-src 'self' http://localhost:5173");
+  next();
+});
