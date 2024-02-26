@@ -9,7 +9,6 @@ import cookieParser from 'cookie-parser';
 
 
 dotenv.config();
-
 mongoose.connect(process.env.MONGO)
   .then(() => {
     console.log("mongoose connected");
@@ -17,7 +16,6 @@ mongoose.connect(process.env.MONGO)
   .catch((err) => {
     console.log(err);
   });
-
 const app = express();
 
 
@@ -27,7 +25,6 @@ app.use(cookieParser())
 app.listen(3000, () => {
   console.log('Server is running on port 3000!!');
 });
-
 app.use('/api/user',useRouter)
 app.use('/api/auth',authRouter)
   
@@ -39,10 +36,8 @@ app.use((err,req,res,next) =>{
     statusCode,
     message
   })
-
   
 })
-
 app.use((req, res, next) => {
   res.setHeader('Content-Security-Policy', "script-src 'self' http://localhost:5173");
   next();
