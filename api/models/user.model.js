@@ -18,6 +18,10 @@ const userSchema = new mongoose.Schema({
     profilePicture:{
         type:String,
         default:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQb3CGv17TYybA-cdAD1r6gbxJjX4YuXFJy-V1D29jPKw&s"
+    },
+    isAdmin:{
+        type:Boolean,
+        default:false,
     }
 },{timestamps:true}) // time when the account created and updated so mongodb save the details because we used time satmp
 
