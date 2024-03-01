@@ -3,8 +3,8 @@ import mongoose from 'mongoose'; // Fix the typo here
 import dotenv from 'dotenv';
 import useRouter from './routes/user.route.js';
 import authRouter from './routes/auth.route.js';
+import postRoutes from './routes/post.route.js';
 import cookieParser from 'cookie-parser';
-
 
 
 
@@ -27,6 +27,8 @@ app.listen(3000, () => {
 });
 app.use('/api/user',useRouter)
 app.use('/api/auth',authRouter)
+app.use('/api/post',postRoutes)
+
   
 app.use((err,req,res,next) =>{
   const statusCode  = err.statusCode  || 500;
