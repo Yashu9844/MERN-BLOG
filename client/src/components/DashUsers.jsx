@@ -4,6 +4,7 @@ import { HiOutlineExclamationCircle } from 'react-icons/hi';
 import {useSelector} from 'react-redux'
 
 import {FaCheck,FaTimes} from 'react-icons/fa'
+import { configureStore } from '@reduxjs/toolkit';
 const DashUsers = () => {
 const {currentUser} = useSelector((state) =>state.user)
 const [users,setUsers] = useState([]);
@@ -58,6 +59,23 @@ const handleShowMore = async ()=>{
 }
   
 const handleDeleteUser = async ()=>{
+
+    try {
+        const res = await fetch(`api/user/delete/${userIdToDelete}`,{
+            method:'DELETE',
+        });
+        const data = await  res.json();
+
+        if(res.ok){
+            setUsers((prev)=>prev.filter((user)=>user._id !== userIdToDelete));
+            setShowModal(false);
+        }else{
+            console.log(data.message)
+        }
+
+    } catch (error) {
+        console.log(error.message)        
+    }
 
 }
 
