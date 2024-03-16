@@ -2,6 +2,7 @@ import React from 'react'
 import { useParams ,Link} from 'react-router-dom'
 import { useEffect ,useState} from 'react'
 import { Button, Spinner } from 'flowbite-react'
+import CallToAction from '../components/CallToAction'
 const PostShow = () => {
 
   const {postSlug } = useParams();
@@ -53,6 +54,11 @@ if(loading) return (
         <span>{post && (post.content.length /1000).toFixed(0)} mins read</span>
       </div>
       <div className='p-3 max-w-2xl mx-auto w-full post-content' dangerouslySetInnerHTML={{__html:post?.content}}></div>
+
+
+      <div className='max-w-4xl mx-auto w-full'>
+        <CallToAction/>
+      </div>
     </main>
   )
 }
