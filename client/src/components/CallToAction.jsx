@@ -15,7 +15,7 @@ const CallToAction = () => {
 
            </div>
            <div className='p-7 pl-10flex-1'>
-            <img src="https://www.shutterstock.com/shutterstock/photos/401325898/display_1500/stock-vector-web-development-in-gears-concept-computer-framework-vector-concept-on-web-development-and-software-401325898.jpg"  className='h-[20vw] w-[20vw] ' />
+            <img src="https://www.shutterstock.com/shutterstock/photos/401325898/display_1500/stock-vector-web-development-in-gears-concept-computer-framework-vector-concept-on-web-development-and-software-401325898.jpg"  className='h-[20vw] w-[20vw] object-cover ' />
            </div>
     </div>
   )

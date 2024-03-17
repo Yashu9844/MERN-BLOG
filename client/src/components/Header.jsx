@@ -56,15 +56,20 @@ const Header = () => {
       <AiOutlineSearch />
     </Button>
     <div className='flex gap-2 md:order-2'>
-      <Button className='w-12 h-10 hidden sm:inline' color='gray' pill>
-        <FaMoon />
-      </Button>
+        <Button
+          className='w-12 h-10 hidden sm:inline'
+          color='gray'
+          pill
+          onClick={() => dispatch(toggleTheme())}
+        >
+          {theme === 'light' ? <FaSun /> : <FaMoon />}
+        </Button>
       {currentUser ? (
         <Dropdown
           arrowIcon={false}
           inline
           label={
-            <Avatar alt='user' img={currentUser.profilePicture} rounded />
+            <Avatar alt='user' img={currentUser.profilePicture} rounded  />
           }
         >
           <Dropdown.Header>
@@ -75,7 +80,7 @@ const Header = () => {
             <Dropdown.Item>Profile</Dropdown.Item>
           </Link>
           <Dropdown.Divider />
-          <Dropdown.Item>Sign out</Dropdown.Item>
+          <Dropdown.Item onClick={handleSignout}>Sign out</Dropdown.Item>
         </Dropdown>
       ) : (
         <Link to='/sign-in'>
