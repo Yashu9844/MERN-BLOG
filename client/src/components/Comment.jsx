@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { FaThumbsUp } from 'react-icons/fa';
 import { useSelector } from 'react-redux';
 
-export default function Comment({ comment, onLike,onEdit }) {
+export default function Comment({ comment, onLike,onEdit , onDelete }) {
   const [user, setUser] = useState({});
   const [isEditing,setEditing] = useState(false);
   const { currentUser } = useSelector((state) => state.user);
@@ -127,24 +127,27 @@ const onSave = async ()=>{
                 (comment.numberOfLikes === 1 ? 'like' : 'likes')}
           </p>
 
-        {
+         {
           currentUser && (currentUser._id === comment.userId || currentUser.isAdmin) && (
-          
+          <>
             <button type='button'  onClick={handleEdit}    className='text-gay-600 hover:text-blue-500'>
               Edit
             </button>
+            <button type='button'  onClick={()=>onDelete(comment._id)}    className='text-gay-600 hover:text-red-500 hover:underline'>
+              Delete
+            </button>
+            </>
+
+           )
+          }
 
 
-  )
-        }
-
-
-        </div>
+           </div>
              </>
 
             
 
-        )}
+          )}
 
 
 
