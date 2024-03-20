@@ -1,5 +1,6 @@
 import { Button } from 'flowbite-react'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const CallToAction = () => {
   return (
@@ -8,9 +9,10 @@ const CallToAction = () => {
             <h2 className='text-5xl'> Want to connect ?? </h2>
             <p className='text-3xl'> Check out my Linkdin account </p>
             <Button gradientDuoTone='purpleToPink' className='rounded-tl-xl rounded-bl-none'>
-                <a href="https://www.linkedin.com/in/yashavanth-r-siddesh
+                {/* <a href="https://www.linkedin.com/in/yashavanth-r-siddesh
 
-" rel='noopener noreferrer'>Check Out</a>
+" rel='noopener noreferrer'>Check Out</a> */}
+ <Link to="https://www.linkedin.com/in/yashavanth-r-siddesh">Check out</Link>
             </Button>
 
            </div>
