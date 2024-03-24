@@ -15,7 +15,7 @@ import CreatePost from './pages/CreatePost'
 import UpdatePost from './pages/UpdatePost'
 import PostShow from './pages/PostShow'
 import ScrollTop from './components/ScrollTop'
-
+import Search from './pages/Search'
 
 
 const App = () => {
@@ -31,7 +31,8 @@ const App = () => {
     <Route path='/about' element={<About />} />
     <Route path='/sign-in' element={<Signinn />} />
     <Route path='/sign-up' element={<SignUp />} />
-
+    <Route path='/search' element={<Search />} />
+    
 
     <Route element={<PrivateRoute/>}>
     <Route path='/dashboard' element={<Dashboard/>} />
